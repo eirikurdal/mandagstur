@@ -22,7 +22,7 @@ app.use(function (req, res, next) {
     next(); //go to the specified route
 });
 
-
+app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(app.get('port'), function () {
     console.log('server running', app.get('port'));
