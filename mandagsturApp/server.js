@@ -1,14 +1,25 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = (process.env.PORT || 3000);
 
-const hostname = '127.0.0.1';
-const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
-});
+//const users = require('./js/users.js');
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+
+
+app.set('port', port);
+app.use(express.static('public'));
+app.use(bodyParser.json());
+
+
+
+// app.use('/innafor/users/', users);
+
+
+
+
+
+app.listen(app.get('port'), function () {
+    console.log('server running', app.get('port'));
 });
