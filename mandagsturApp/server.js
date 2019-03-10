@@ -4,8 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require('./js/dbconnect').db; //database
 
-//const users = require('./js/users.js');
-//app.use('/innafor/users/', users);
+const hikes = require('./js/hikes.js');
+app.use('/hikes/', hikes);
 
 const port = (process.env.PORT || 3000);
 
