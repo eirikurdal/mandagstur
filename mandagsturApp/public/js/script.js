@@ -20,5 +20,3 @@ function convertDate(date) {
     
     return newDate;
 }
-
-console.log(convertDate('2019-04-01'));

@@ -1,5 +1,5 @@
 // Endpoints =================================
-const GET_ALL_HIKES_ENDPOINT = '/hikes/getall';
+const GET_ALL_HIKES_ENDPOINT = 'https://mandagstur.herokuapp.com/hikes/getall';
 
 // ADD new list elements --------
 const INPUT_LIST_TITLE = "listTitle";
