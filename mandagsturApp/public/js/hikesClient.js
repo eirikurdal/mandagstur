@@ -1,5 +1,6 @@
 // Endpoints =================================
-const GET_ALL_HIKES_ENDPOINT = 'https://mandagstur.herokuapp.com/hikes/getall';
+const URL = 'https://mandagstur.herokuapp.com';
+const GET_ALL_HIKES_ENDPOINT = '/hikes/getall';
 
 // ADD new list elements --------
 const INPUT_LIST_TITLE = "listTitle";
@@ -61,7 +62,7 @@ function showHikes() {
 
 function getAllHikes() {
 
-    return fetch(GET_ALL_HIKES_ENDPOINT, {
+    return fetch(URL+GET_ALL_HIKES_ENDPOINT, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
