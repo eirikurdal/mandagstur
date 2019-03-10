@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Roboto');
 
+:root {
+    --main-color: #ffeb3b;
+    --second-color: #fffcdd;
+    --accent-color: #ffeb3b;
+    --light-color: white;      /*rgb(225, 245, 255);*/
+    --dark-color: #222;
+    --dark-color2: #444;
+    
+    /*  SOM BROSJYREN
+    --main-color: rgb(0, 140, 211);
+    --second-color: rgb(163, 209, 232);
+    --accent-color: rgb(237, 105, 73);
+    --light-color: white;      rgb(225, 245, 255);
+    --dark-color: #222;
+    --dark-color2: #444;
+    
+    */
+}
+
 * {
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -7,7 +26,7 @@
 }
 
 body {
-    background-color: #222;
+    background-color: var(--dark-color);
 }
 
 h1,
@@ -18,25 +37,25 @@ h3 {
 
 hr {
     margin: 0 15px;
-    border-color: #444;
+    border-color: var(--dark-color2);
 }
 
 #header {
-    background-color: #ffeb3b;
+    background-color: var(--main-color);
     padding: 20px;
     min-height: 20px;
 
     text-align: center;
-    color: #000;
+    color: var(--dark-color);
 }
 
 #subheader {
-    background-color: #fffbd5;
+    background-color: var(--dark-color2);
     padding: 15px;
     min-height: 20px;
 
     text-align: center;
-    color: #000;
+    color: var(--light-color);
 }
 
 #hikesContainer {
@@ -55,33 +74,17 @@ hr {
     margin: 5px 0;
     padding: 15px;
 
-    color: white;
+    color: var(--light-color);;
 }
 
-.imageCropper {
-    margin-right: 25px;
-    float: left;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 50%;
-}
 
-.hikeImage {
-    display: inline;
-    margin: 0 auto;
-    margin-left: -25%;
-    height: 100%;
-    width: auto;
-}
 
 .roundImage {
     width: 200px;
     height: 200px;
     margin-right: 25px;
     background-size: cover;
-    display: inline-block;
-    float: left;
+    float: right;
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
@@ -92,12 +95,15 @@ hr {
 }
 
 .title {
-    color: #ffeb3b;
+    color: var(--accent-color);
+    font-weight: 400;
 }
 
 .newHike {
-    color: #ffeb3b;
+    color: var(--accent-color);
 }
+
+
 
 @media only screen and (max-width: 500px) {
     .roundImage {
