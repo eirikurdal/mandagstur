@@ -55,7 +55,7 @@ hr {
 #header {
     background-size: cover;
     background-color: var(--main-color);
-    background-image: url('/img/frostskog.jpg');
+    background-image: url('/img/kraageland.jpg');
     height: 200px;
     box-sizing: border-box;
     text-align: center;
@@ -64,13 +64,48 @@ hr {
     color: var(--light-color);
 }
 
-#subheader {
-    background-color: var(--dark-color2);
+.subheader {
     padding: 15px;
     min-height: 20px;
 
     text-align: center;
+}
+
+.dark {
+    background-color: var(--dark-color2);
     color: var(--light-color);
+}
+
+.light {
+    background-color: var(--light-color);
+    color: var(--dark-color2);
+}
+
+.accent {
+    background-color: var(--accent-color);
+    color: var(--dark-color2);
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-right: 25px;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.75em;
+    font-weight: 400;
+}
+
+.button:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.button:active {
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
 #hikesContainer {

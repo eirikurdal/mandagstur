@@ -16,7 +16,13 @@ function convertDate(date) {
                   'november',
                   'desember'];
 
-    let newDate = day + '. ' + months[month-1];
-    
+    let newDate = day + '. ' + months[month - 1];
+
     return newDate;
 }
+
+let btnUpcoming = document.getElementById("btnUpcoming");
+btnUpcoming.onclick = showUpcomingHikes;
+
+let btnAll = document.getElementById("btnAll");
+btnAll.onclick = showAllHikes;

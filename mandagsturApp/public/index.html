@@ -5,18 +5,15 @@
 <head>
     <meta charset='utf-8' />
     <title>Mandagsturen</title>
-    
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-    <!-- Min javascript -->
-    <script src='js/hikesClient.js' type='application/javascript'></script>
-    <script src='js/script.js' type='application/javascript'></script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <!-- Min CSS -->
     <link href='css/stylesheet.css' rel='stylesheet' type='text/css'>
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -24,8 +21,14 @@
     <div id='header'>
         <h1>Mandagsturen 2019</h1>
     </div>
-    <div id='subheader'>
+    <div class='subheader accent'>
+        <h3>Vi går for trim, kameratskap og opplevelse.</h3>
+        <p>Oppmøte ved Songdalen Frikirke kl. 17.30. Husk niste, kaffe/drikke og eventuelt badetøy. De fleste turene er på mellom 4–7 km. Endringer i programmet kan forekomme. Vi sees!</p>
+    </div>
+    <div class='subheader light'>
         <h3>
+            <div id='btnAll' class='button'>Alle turer</div>
+            <div id='btnUpcoming' class='button'>Kommende turer</div>
             <i class="fas fa-star newHike" ${styleText}></i>
             = Ny tur i år
         </h3>
@@ -33,6 +36,14 @@
     <div id='hikesContainer'>
         ... laster lister
     </div>
+
+    <script>
+
+    </script>
+    
+    <!-- Min javascript -->
+    <script src='js/hikesClient.js' type='application/javascript'></script>
+    <script src='js/script.js' type='application/javascript'></script>
 
 </body>
 
