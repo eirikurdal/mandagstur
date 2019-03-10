@@ -35,14 +35,17 @@ function showHikes() {
                 //------
 
                 html += `<div id="${hikeId}" class='hikeContainer'>
-                            <div class="roundImage"
-                                style="background-image: url('/img/${image}')">
+                            <div class='hikeImage'>
+                                <div class="roundImage"
+                                    style="background-image: url('/img/${image}')">
+                                </div>
                             </div>
                             <div class='hikeInfo'>
                                 <p class='date'>${convertDate(date)}</p>
                                 <h2 class='title'>
-                                    <i class="fas fa-star newHike" ${styleText}></i>
                                     ${title}
+                                    <i class="fas fa-star newHike" ${styleText}></i>
+                                    
                                 </h2>
                                 <p class='description'>${description}</p>
                             </div>
