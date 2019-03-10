@@ -66,7 +66,7 @@ router.post("/update/list/", utilities.authenticateUser, async function (req, re
 router.get("/getall/", async function (req, res) {
 
     try {
-        let query = `SELECT * FROM hikes ORDER BY date DESC`;
+        let query = `SELECT * FROM hikes ORDER BY date ASC`;
         let datarows = await db.any(query);
         console.log(datarows);
 

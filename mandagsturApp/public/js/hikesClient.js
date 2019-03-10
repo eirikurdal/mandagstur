@@ -7,7 +7,7 @@ const ADD_NEW_HIKE_ENDPOINT = '/hikes/add';
 const INPUT_LIST_TITLE = "listTitle";
 
 // OUTPUT elements ----------------------
-const OUTPUT_LIST_CONTAINER = "hikesContainer";
+const OUTPUT_HIKES_CONTAINER = "hikesContainer";
 
 
 // ===========================================
@@ -19,7 +19,7 @@ function showAllHikes() {
     getAllHikes().then(response => {
         if (response.status !== 200) {
             let hikes = response.hikes;
-            let hikesContainer = document.getElementById(OUTPUT_LIST_CONTAINER);
+            let hikesContainer = document.getElementById(OUTPUT_HIKES_CONTAINER);
             hikesContainer.innerHTML = "";
 
             for (let i = 0; i < hikes.length; i++) {
@@ -67,7 +67,7 @@ function showUpcomingHikes() {
     getAllHikes().then(response => {
         if (response.status !== 200) {
             let hikes = response.hikes;
-            let hikesContainer = document.getElementById(OUTPUT_LIST_CONTAINER);
+            let hikesContainer = document.getElementById(OUTPUT_HIKES_CONTAINER);
             hikesContainer.innerHTML = "";
 
             for (let i = 0; i < hikes.length; i++) {
@@ -157,7 +157,7 @@ function sendHikeToDB(hike) {
 
 function getAllHikes() {
 
-    return fetch(URL + GET_ALL_HIKES_ENDPOINT, {
+    return fetch(URL+GET_ALL_HIKES_ENDPOINT, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
