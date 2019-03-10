@@ -26,24 +26,33 @@
         <p>Oppmøte ved Songdalen Frikirke kl. 17.30. Husk niste, kaffe/drikke og eventuelt badetøy. De fleste turene er på mellom 4–7 km. Endringer i programmet kan forekomme. Vi sees!</p>
     </div>
     <div class='subheader light'>
-        <h3>
-            <div id='btnAll' class='button'>Alle turer</div>
-            <div id='btnUpcoming' class='button'>Kommende turer</div>
+        <div id='btnAll' class='button'>Alle turer</div>
+        <div id='btnUpcoming' class='button'>Kommende turer</div>
+        <div style='display: inline-block'>
             <i class="fas fa-star newHike" ${styleText}></i>
             = Ny tur i år
-        </h3>
+        </div>
     </div>
     <div id='hikesContainer'>
         ... laster lister
     </div>
 
-    <script>
-
-    </script>
-    
     <!-- Min javascript -->
     <script src='js/hikesClient.js' type='application/javascript'></script>
     <script src='js/script.js' type='application/javascript'></script>
+    <script>
+        let btnUpcoming = document.getElementById("btnUpcoming");
+        btnUpcoming.onclick = showUpcomingHikes;
+
+        let btnAll = document.getElementById("btnAll");
+        btnAll.onclick = showAllHikes;
+
+
+        (function() {
+            showAllHikes();
+        })()
+
+    </script>
 
 </body>
 

@@ -1,6 +1,7 @@
 // Endpoints =================================
 const URL = 'https://mandagstur.herokuapp.com';
 const GET_ALL_HIKES_ENDPOINT = '/hikes/getall';
+const ADD_NEW_HIKE_ENDPOINT = '/hikes/add';
 
 // ADD new list elements --------
 const INPUT_LIST_TITLE = "listTitle";
@@ -28,7 +29,7 @@ function showAllHikes() {
                 let date = hikes[i].date;
                 let image = hikes[i].image;
                 let styleText = '';
-                if (!hikes[i].isNew) {
+                if (!hikes[i].isnew ) {
                     styleText = `style='display:none'`;
                 }
                 let html = "";
@@ -76,7 +77,7 @@ function showUpcomingHikes() {
                 let date = hikes[i].date.substring(0, 10);
                 let image = hikes[i].image;
                 let styleText = '';
-                if (!hikes[i].isNew) {
+                if (!hikes[i].isnew) {
                     styleText = `style='display:none'`;
                 }
                 let html = "";
@@ -113,6 +114,47 @@ function showUpcomingHikes() {
     });
 }
 
+function addNewHike(evt) {
+    evt.preventDefault();
+    console.log("addNewHike");
+
+    let title = document.getElementById('title').value;
+    let description = document.getElementById('description').value;
+    let date = document.getElementById('date').value;
+    let isnew = document.getElementById('isnew').checked;
+
+    let hike = {
+        title: title,
+        description: description,
+        date: date,
+        isnew: isnew
+    };
+    
+    console.log(hike);
+    
+    
+    sendHikeToDB(hike).then(response => {
+        if (response.status !== 200) {
+            window.alert(response.msg);
+        }
+    });
+    
+}
+
+function sendHikeToDB(hike) {
+    console.log("Sending hike to database");
+    return fetch(ADD_NEW_HIKE_ENDPOINT, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify(hike)
+    }).then(data => {
+        return data.json();
+    });
+}
+
 function getAllHikes() {
 
     return fetch(URL + GET_ALL_HIKES_ENDPOINT, {
@@ -130,6 +172,3 @@ function getAllHikes() {
 // INIT ======================================
 // ===========================================
 
-(function () {
-    showAllHikes();
-})()

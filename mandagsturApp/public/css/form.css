@@ -1,0 +1,23 @@
+input, textarea {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.input {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background: #eee;
+}
+
+#formContainer {
+    margin: auto;
+    text-align: center;
+    min-height: 20px;
+    max-width: 800px;
+    padding: 15px;
+}

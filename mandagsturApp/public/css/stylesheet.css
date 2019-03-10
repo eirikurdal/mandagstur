@@ -60,9 +60,12 @@ hr {
     box-sizing: border-box;
     text-align: center;
     line-height: 200px;
-    font-size: 3vw;
+    font-size: 4vw;
     color: var(--light-color);
+    text-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
 }
+
+
 
 .subheader {
     padding: 15px;
@@ -89,7 +92,7 @@ hr {
 .button {
     display: inline-block;
     padding: 5px 15px;
-    margin-right: 25px;
+    margin-right: 10px;
     background-color: var(--accent-color);
     color: var(--dark-color);
     cursor: pointer;
@@ -162,5 +165,17 @@ hr {
         width: 100%;
         height: 200px;
         margin-bottom: 15px;
+    }
+    
+    #header {
+        padding-top: 40px;
+        line-height: 60px;
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (min-width: 800px) {    
+    #header {
+        font-size: 2em;
     }
 }

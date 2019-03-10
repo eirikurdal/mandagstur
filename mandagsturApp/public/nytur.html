@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Mandagsturen</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <!-- Min CSS -->
+    <link href='css/stylesheet.css' rel='stylesheet' type='text/css'>
+    <link href='css/form.css' rel='stylesheet' type='text/css'>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div id='header'>
+        <h1>Mandagsturen 2019</h1>
+    </div>
+    <div class='subheader accent'>
+        <h3>Legg til ny tur</h3>
+        <p>Fyll ut skjemaet under for å legge til ny tur. <br>Avslutt med å trykke på knappen "Legg til".</p>
+    </div>
+    <div id='formContainer'>
+        <form>
+            <label for="title">Tittel</label>
+            <br>
+            <input id="title" type='text' class='input' placeholder='Hvor går turen?'>
+            <br>
+            <label for="description">Beskrivelse</label>
+            <br>
+            <textarea id="description" class='input' placeholder='Skriv litt om turen'></textarea>
+            <br>
+            <label for="date">Dato</label>
+            <br>
+            <input id="date" type='date' class='input' placeholder='Skriv litt om turen'>
+            <br>
+            <input id="isnew" type='checkbox'>
+            <label for="isnew">Dette er en ny tur</label>
+
+            <br>
+            <div id='btnSubmit' class='button'>Legg til tur</div>
+
+        </form>
+
+    </div>
+
+    <!-- Min javascript -->
+    <script src='js/hikesClient.js' type='application/javascript'></script>
+    <script src='js/script.js' type='application/javascript'></script>
+
+    <script>
+        let btnSubmit = document.getElementById("btnSubmit");
+        btnSubmit.onclick = addNewHike;
+    </script>
+
+</body>
+
+</html>
