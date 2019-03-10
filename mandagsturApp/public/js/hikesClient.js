@@ -26,21 +26,28 @@ function showHikes() {
                 let description = hikes[i].description;
                 let date = hikes[i].date;
                 let image = hikes[i].image;
-                let isNew = hikes[i].isNew;
+                let styleText = '';
+                if (!hikes[i].isNew) {
+                    styleText = `style='display:none'`;
+                }
                 let html = "";
 
                 //------
 
                 html += `<div id="${hikeId}" class='hikeContainer'>
-                            <div class="imageCropper">
-                                <img src='/img/${image}' class='hikeImage'>
+                            <div class="roundImage"
+                                style="background-image: url('/img/${image}')">
                             </div>
                             <div class='hikeInfo'>
                                 <p class='date'>${convertDate(date)}</p>
-                                <h3>${title}</h3>
+                                <h2 class='title'>
+                                    <i class="fas fa-star newHike" ${styleText}></i>
+                                    ${title}
+                                </h2>
                                 <p class='description'>${description}</p>
                             </div>
-                        </div>`;
+                        </div>
+                        <hr>`;
                 
                 hikesContainer.innerHTML += html;
 
