@@ -32,10 +32,14 @@ function showHikes() {
                 //------
 
                 html += `<div id="${hikeId}" class='hikeContainer'>
-                            <img src='/img/${image}'>
-                            <p class='date'>${date}</p>
-                            <h3>${title}</h3>
-                            <p class='description'>${description}</p>
+                            <div class="imageCropper">
+                                <img src='/img/${image}' class='hikeImage'>
+                            </div>
+                            <div class='hikeInfo'>
+                                <p class='date'>${convertDate(date)}</p>
+                                <h3>${title}</h3>
+                                <p class='description'>${description}</p>
+                            </div>
                         </div>`;
                 
                 hikesContainer.innerHTML += html;

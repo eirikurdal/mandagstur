@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
+
+* {
+    font-family: 'Lora', serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #222;
+}
+
+#header {
+    background-color: #ffeb3b;
+    padding: 20px;
+    min-height: 20px;
+    
+    text-align: center;
+    color: #000000;
+}
+
+#hikesContainer {
+    margin: auto;
+    min-height: 20px;
+    max-width: 800px;
+}
+
+/*******************************
+******* HIKE CONTAINER *********
+*******************************/
+.hikeContainer {
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: antiquewhite;
+    width: 100%;
+    height: 500px;
+}
+
+.imageCropper {
+    margin-right: 25px;
+    float: left;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.hikeImage {
+  display: inline;
+  margin: 0 auto;
+  margin-left: -25%;
+  height: 100%;
+  width: auto;
+}
+
+.hikeInfo {
+    padding: 25px;
+
