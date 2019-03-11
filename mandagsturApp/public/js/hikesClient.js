@@ -29,7 +29,7 @@ function showAllHikes() {
                 let date = hikes[i].date;
                 let image = hikes[i].image;
                 let styleText = '';
-                if (!hikes[i].isnew ) {
+                if (!hikes[i].isnew) {
                     styleText = `style='display:none'`;
                 }
                 let html = "";
@@ -129,16 +129,15 @@ function addNewHike(evt) {
         date: date,
         isnew: isnew
     };
-    
+
     console.log(hike);
-    
-    
+
+
     sendHikeToDB(hike).then(response => {
-        if (response.status !== 200) {
-            window.alert(response.msg);
-        }
+        window.alert(response.msg);
+        location.reload();
     });
-    
+
 }
 
 function sendHikeToDB(hike) {
@@ -157,7 +156,7 @@ function sendHikeToDB(hike) {
 
 function getAllHikes() {
 
-    return fetch(URL+GET_ALL_HIKES_ENDPOINT, {
+    return fetch(GET_ALL_HIKES_ENDPOINT, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -171,4 +170,3 @@ function getAllHikes() {
 // ===========================================
 // INIT ======================================
 // ===========================================
-

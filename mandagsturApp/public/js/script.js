@@ -20,9 +20,3 @@ function convertDate(date) {
 
     return newDate;
 }
-
-let btnUpcoming = document.getElementById("btnUpcoming");
-btnUpcoming.onclick = showUpcomingHikes;
-
-let btnAll = document.getElementById("btnAll");
-btnAll.onclick = showAllHikes;

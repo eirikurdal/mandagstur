@@ -16,7 +16,8 @@ router.post("/add/", async function (req, res) {
 
         let query = `INSERT INTO hikes(title, description, date, isnew) VALUES('${title}', '${description}', '${date}', '${isnew}') RETURNING *;`;
 
-        let datarows = await db.any(query);        
+        let datarows = await db.any(query); 
+        console.log(datarows);
 
         let statusCode = datarows ? 200 : 500;
         console.log("Status: " + statusCode);
@@ -25,7 +26,8 @@ router.post("/add/", async function (req, res) {
         }).end()
     } catch (error) {
         res.status(500).json({
-            error: error
+            error: error,
+            msg: `Something went wrong: ${error}`
         }); //something went wrong!
         console.log("ERROR: " + error);
     }
