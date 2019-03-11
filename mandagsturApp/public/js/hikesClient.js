@@ -142,7 +142,7 @@ function addNewHike(evt) {
 
 function sendHikeToDB(hike) {
     console.log("Sending hike to database");
-    return fetch(ADD_NEW_HIKE_ENDPOINT, {
+    return fetch(URL+ADD_NEW_HIKE_ENDPOINT, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -156,7 +156,7 @@ function sendHikeToDB(hike) {
 
 function getAllHikes() {
 
-    return fetch(GET_ALL_HIKES_ENDPOINT, {
+    return fetch(URL+GET_ALL_HIKES_ENDPOINT, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
