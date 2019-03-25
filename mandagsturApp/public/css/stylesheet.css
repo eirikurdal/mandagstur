@@ -56,26 +56,27 @@ hr {
     background-size: cover;
     background-color: var(--main-color);
     background-image: url('/img/kraageland.jpg');
-    height: 200px;
+    height: 350px;
     box-sizing: border-box;
     text-align: center;
-    line-height: 200px;
+    line-height: 350px;
     font-size: 4vw;
     color: var(--light-color);
     text-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
 }
 
-
-
-.subheader {
+.container {
     padding: 15px;
     min-height: 20px;
-
     text-align: center;
 }
 
+.subheader {
+    padding: 60px 15px;
+}
+
 .dark {
-    background-color: var(--dark-color2);
+    background-color: var(--dark-color);
     color: var(--light-color);
 }
 
@@ -93,8 +94,8 @@ hr {
     display: inline-block;
     padding: 5px 15px;
     margin-right: 10px;
-    background-color: var(--accent-color);
-    color: var(--dark-color);
+    background-color: var(--dark-color);
+    color: var(--light-color);
     cursor: pointer;
     border-radius: 5px;
     font-size: 0.75em;
@@ -102,7 +103,7 @@ hr {
 }
 
 .button:hover {
-    background-color: var(--dark-color);
+    background-color: var(--dark-color2);
     color: var(--light-color);
 }
 
@@ -130,14 +131,13 @@ hr {
     color: var(--dark-color);;
 }
 
-
-
-.roundImage {
+.hikeImage {
     width: 200px;
     height: 200px;
     background-size: cover;
     float: right;
     margin-left: 15px;
+    border-bottom: var(--accent-color) 3px solid;
     /* ROUNDING
     border-radius: 100px;
     -webkit-border-radius: 100px;
@@ -161,14 +161,16 @@ hr {
 
 
 @media only screen and (max-width: 500px) {
-    .roundImage {
+    .hikeImage {
         width: 100%;
         height: 200px;
         margin-bottom: 15px;
     }
     
     #header {
-        padding-top: 40px;
+        padding-top: 115px;
+        padding-left: 10px;
+        padding-right: 10px;
         line-height: 60px;
         font-size: 1.4em;
     }

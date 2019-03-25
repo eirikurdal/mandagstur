@@ -40,7 +40,7 @@ function showAllHikes() {
                         <hr>
                         <div id="${hikeId}" class='hikeContainer'>
                             <div class='hikeImage'>
-                                <div class="roundImage"
+                                <div class="hikeImage"
                                     style="background-image: url('/img/${image}')">
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ function showUpcomingHikes() {
                         <hr>
                         <div id="${hikeId}" class='hikeContainer'>
                             <div class='hikeImage'>
-                                <div class="roundImage"
+                                <div class="hikeImage"
                                     style="background-image: url('/img/${image}')">
                                 </div>
                             </div>

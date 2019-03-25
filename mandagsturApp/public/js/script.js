@@ -20,3 +20,13 @@ function convertDate(date) {
 
     return newDate;
 }
+
+let cogBtn = document.querySelector('.cogIcon');
+cogBtn.onclick = promptAdmin;
+
+function promptAdmin () {
+    let password = window.prompt('Passord kreves for å kunne legge til nye turer.');
+    if(password == process.env.ADMIN_PASSWORD) {
+        window.location = '/nytur.html';
+    }
+}
