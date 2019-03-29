@@ -7,7 +7,7 @@
     --light-color: white;
     --dark-color: #222;
     --dark-color2: #444;
-
+    
     /*  YELLOW theme
     
     --main-color: #ffeb3b;
@@ -18,7 +18,7 @@
     --dark-color2: #444;
     
     */
-
+    
     /*  SOM BROSJYREN
     --main-color: rgb(0, 140, 211);
     --second-color: rgb(163, 209, 232);
@@ -30,21 +30,6 @@
     */
 }
 
-.dark {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-}
-
-.light {
-    background-color: var(--light-color);
-    color: var(--dark-color2);
-}
-
-.accent {
-    background-color: var(--accent-color);
-    color: var(--dark-color2);
-}
-
 * {
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -53,18 +38,6 @@
 
 body {
     background-color: var(--light-color);
-}
-
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1500;
-    background-size: cover;
-    background-color: var(--main-color);
-    background-image: url('/img/kraageland.jpg');
 }
 
 h1,
@@ -80,6 +53,9 @@ hr {
 }
 
 #header {
+    background-size: cover;
+    background-color: var(--main-color);
+    background-image: url('/img/kraageland.jpg');
     height: 350px;
     box-sizing: border-box;
     text-align: center;
@@ -93,22 +69,25 @@ hr {
     padding: 15px;
     min-height: 20px;
     text-align: center;
-    box-sizing: border-box;
-    margin: auto;
-    min-height: 20px;
-    max-width: 800px;
 }
 
 .subheader {
-    padding: 60px 25px;
+    padding: 60px 15px;
 }
 
-.cogIcon {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 2em;
+.dark {
+    background-color: var(--dark-color);
     color: var(--light-color);
+}
+
+.light {
+    background-color: var(--light-color);
+    color: var(--dark-color2);
+}
+
+.accent {
+    background-color: var(--accent-color);
+    color: var(--dark-color2);
 }
 
 .button {
@@ -149,16 +128,16 @@ hr {
     margin: 5px 0;
     padding: 15px;
 
-    color: var(--dark-color);
-    ;
+    color: var(--dark-color);;
 }
 
 .hikeImage {
-    width: 30%;
+    width: 200px;
     height: 200px;
     background-size: cover;
     float: right;
-    margin-left: 25px;
+    margin-left: 15px;
+    border-bottom: var(--accent-color) 3px solid;
     /* ROUNDING
     border-radius: 100px;
     -webkit-border-radius: 100px;
@@ -184,10 +163,10 @@ hr {
 @media only screen and (max-width: 500px) {
     .hikeImage {
         width: 100%;
-        height: px;
+        height: 200px;
         margin-bottom: 15px;
     }
-
+    
     #header {
         padding-top: 115px;
         padding-left: 10px;
@@ -197,7 +176,7 @@ hr {
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) {    
     #header {
         font-size: 2em;
     }

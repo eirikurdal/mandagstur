@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <!-- Min CSS -->
-    <link href='css/stylesheet2.css' rel='stylesheet' type='text/css'>
+    <link href='css/stylesheet.css' rel='stylesheet' type='text/css'>
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -23,33 +23,36 @@
         <i class="fas fa-cog"></i>
     </div>
 
+    <style>
+        .cogIcon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 2em;
+            
+            color: var(--light-color);
+        }
+
+    </style>
+
     <!-- PAGE CONTENT -->
-    <div class="background-image"></div>
-
-
     <div id='header'>
-        <h1 class='page-title'>Mandagsturen<br>2019</h1>
+        <h1>Mandagsturen 2019</h1>
     </div>
-    <div class='container container-floating dark-translucent'>
-        <div class='container'>
-            <p class='title'>Vi går for trim, kameratskap og opplevelse.</p>
-            <p>Oppmøte ved Songdalen Frikirke kl. 17.30. Husk niste, kaffe/drikke og eventuelt badetøy. De fleste turene er på mellom 4–7 km. Endringer i programmet kan forekomme. Vi sees!</p>
-        </div>
+    <div class='container subheader dark'>
+        <p><b>Vi går for trim, kameratskap og opplevelse.</b></p>
+        <p>Oppmøte ved Songdalen Frikirke kl. 17.30. Husk niste, kaffe/drikke og eventuelt badetøy. De fleste turene er på mellom 4–7 km. Endringer i programmet kan forekomme. Vi sees!</p>
     </div>
     <div class='container light'>
         <div id='btnAll' class='button'>Alle turer</div>
         <div id='btnUpcoming' class='button'>Kommende turer</div>
         <div style='display: inline-block'>
-            <i class="fas fa-star color-accent" ${styleText}></i>
+            <i class="fas fa-star newHike" ${styleText}></i>
             = Ny tur i år
         </div>
     </div>
-    <div id='hikesContainer' class='container light'>
+    <div id='hikesContainer'>
         ... laster lister. Oppdater siden om det tar mer enn 7-8 sekunder.
-    </div>
-    <div class='spacer'></div>
-    <div class='container dark'>
-        &copy; 2019 Eirik Urdal
     </div>
 
     <!-- Min javascript -->

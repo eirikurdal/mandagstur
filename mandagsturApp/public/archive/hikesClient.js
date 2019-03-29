@@ -38,14 +38,17 @@ function showAllHikes() {
 
                 html += `
                         <hr>
-                        <div id="${hikeId}" class='hike-container light'>
-                            <div class="hike-image"
-                                style="background-image: url('/img/${image}')">
+                        <div id="${hikeId}" class='hikeContainer'>
+                            <div class='hikeImage'>
+                                <div class="hikeImage"
+                                    style="background-image: url('/img/${image}')">
+                                </div>
                             </div>
-                            <div class='hike-info'>
+                            <div class='hikeInfo'>
                                 <p class='date'>${convertDate(date)}</p>
-                                <h2 class='hike-title'>
-                                    <i class="fas fa-star color-accent" ${styleText}></i>
+                                <h2 class='title'>
+                                    
+                                    <i class="fas fa-star newHike" ${styleText}></i>
                                     ${title}
                                 </h2>
                                 <p class='description'>${description}</p>
@@ -86,8 +89,10 @@ function showUpcomingHikes() {
                     html += `
                         <hr>
                         <div id="${hikeId}" class='hikeContainer'>
-                            <div class="hikeImage"
-                                style="background-image: url('/img/${image}')">
+                            <div class='hikeImage'>
+                                <div class="hikeImage"
+                                    style="background-image: url('/img/${image}')">
+                                </div>
                             </div>
                             <div class='hikeInfo'>
                                 <p class='date'>${convertDate(date)}</p>
@@ -137,7 +142,7 @@ function addNewHike(evt) {
 
 function sendHikeToDB(hike) {
     console.log("Sending hike to database");
-    return fetch(URL + ADD_NEW_HIKE_ENDPOINT, {
+    return fetch(URL+ADD_NEW_HIKE_ENDPOINT, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -151,7 +156,7 @@ function sendHikeToDB(hike) {
 
 function getAllHikes() {
 
-    return fetch(URL + GET_ALL_HIKES_ENDPOINT, {
+    return fetch(URL+GET_ALL_HIKES_ENDPOINT, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
