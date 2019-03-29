@@ -18,7 +18,13 @@
 </head>
 
 <body>
+    
+    <!-- MENU -->
+    <div class='cogIcon'>
+        <i class="fas fa-cog"></i>
+    </div>
 
+    <!-- Page Content -->
     <div id='header'>
         <h1>Mandagsturen 2019</h1>
     </div>
@@ -27,24 +33,24 @@
         <p>Fyll ut skjemaet under for å legge til ny tur. <br>Avslutt med å trykke på knappen "Legg til". <br>Bilde kan du sende til Eirik.</p>
     </div>
     <div id='formContainer'>
-        <form>
+        <form id='newHike'>
             <label for="title">Tittel</label>
             <br>
-            <input id="title" type='text' class='input' placeholder='Hvor går turen?'>
+            <input id="title" type='text' class='input' placeholder='Hvor går turen?' required>
             <br>
             <label for="description">Beskrivelse</label>
             <br>
-            <textarea id="description" class='input' placeholder='Skriv litt om turen'></textarea>
+            <textarea id="description" class='input' placeholder='Skriv litt om turen' required></textarea>
             <br>
             <label for="date">Dato</label>
             <br>
-            <input id="date" type='date' class='input' placeholder='Skriv litt om turen'>
+            <input id="date" type='date' class='input' placeholder='Skriv litt om turen' required>
             <br>
             <input id="isnew" type='checkbox'>
             <label for="isnew">Dette er en ny tur</label>
 
             <br>
-            <div id='btnSubmit' class='button'>Legg til tur</div>
+            <button type='submit' class='button'>Send in</button>
 
         </form>
 
@@ -55,8 +61,12 @@
     <script src='js/script.js' type='application/javascript'></script>
 
     <script>
-        let btnSubmit = document.getElementById("btnSubmit");
-        btnSubmit.onclick = addNewHike;
+        let newHike = document.getElementById("newHike");
+        newHike.onsubmit = function (e){
+            e.preventDefault;
+            console.log('legger til ny tur');
+        };
+        //btnSubmit.onclick = addNewHike;
     </script>
 
 </body>

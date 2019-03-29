@@ -21,12 +21,14 @@ function convertDate(date) {
     return newDate;
 }
 
+// Logge inn på Admin-siden
+
 let cogBtn = document.querySelector('.cogIcon');
 cogBtn.onclick = promptAdmin;
 
 function promptAdmin () {
     let password = window.prompt('Passord kreves for å kunne legge til nye turer.');
-    if(password == process.env.ADMIN_PASSWORD) {
+    if(password == 'krageland') {
         window.location = '/nytur.html';
     }
 }

@@ -7,7 +7,7 @@
     --light-color: white;
     --dark-color: #222;
     --dark-color2: #444;
-    
+
     /*  YELLOW theme
     
     --main-color: #ffeb3b;
@@ -18,7 +18,7 @@
     --dark-color2: #444;
     
     */
-    
+
     /*  SOM BROSJYREN
     --main-color: rgb(0, 140, 211);
     --second-color: rgb(163, 209, 232);
@@ -75,6 +75,15 @@ hr {
     padding: 60px 15px;
 }
 
+.cogIcon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 2em;
+
+    color: var(--light-color);
+}
+
 .dark {
     background-color: var(--dark-color);
     color: var(--light-color);
@@ -128,7 +137,8 @@ hr {
     margin: 5px 0;
     padding: 15px;
 
-    color: var(--dark-color);;
+    color: var(--dark-color);
+    ;
 }
 
 .hikeImage {
@@ -137,7 +147,6 @@ hr {
     background-size: cover;
     float: right;
     margin-left: 15px;
-    border-bottom: var(--accent-color) 3px solid;
     /* ROUNDING
     border-radius: 100px;
     -webkit-border-radius: 100px;
@@ -163,10 +172,10 @@ hr {
 @media only screen and (max-width: 500px) {
     .hikeImage {
         width: 100%;
-        height: 200px;
+        height: px;
         margin-bottom: 15px;
     }
-    
+
     #header {
         padding-top: 115px;
         padding-left: 10px;
@@ -176,7 +185,7 @@ hr {
     }
 }
 
-@media only screen and (min-width: 800px) {    
+@media only screen and (min-width: 800px) {
     #header {
         font-size: 2em;
     }
