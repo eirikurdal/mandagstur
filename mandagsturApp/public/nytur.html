@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <!-- Min CSS -->
-    <link href='css/stylesheet.css' rel='stylesheet' type='text/css'>
+    <link href='css/stylesheet2.css' rel='stylesheet' type='text/css'>
     <link href='css/form.css' rel='stylesheet' type='text/css'>
 
     <!-- FontAwesome -->
@@ -18,21 +18,59 @@
 </head>
 
 <body>
-    
+
     <!-- MENU -->
     <div class='cogIcon'>
         <i class="fas fa-cog"></i>
     </div>
 
-    <!-- Page Content -->
+    <!-- PAGE CONTENT -->
+    <div class="background-image"></div>
+
     <div id='header'>
-        <h1>Mandagsturen 2019</h1>
+        <h1 class='page-title'>Mandagsturen<br>2019</h1>
     </div>
-    <div class='container subheader accent'>
-        <h3>Legg til ny tur</h3>
-        <p>Fyll ut skjemaet under for å legge til ny tur. <br>Avslutt med å trykke på knappen "Legg til". <br>Bilde kan du sende til Eirik.</p>
+
+    <div class='container light'>
+        <form ref='uploadForm' id='uploadForm' action='http://localhost:3000/hikes/upload' method='post' encType="multipart/form-data">
+            <input type="file" name="sampleFile" />
+            <input type='submit' value='Upload!' />
+        </form>
     </div>
-    <div id='formContainer'>
+
+    <div class='container light'>
+        <input type="file" onchange="previewFile()"><br>
+        <img src="" height="200" alt="Image preview...">
+    </div>
+
+
+    <script>
+        function previewFile() {
+            var preview = document.querySelector('img'); //selects the query named img
+            var file = document.querySelector('input[type=file]').files[0]; //sames as here
+            var reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            } else {
+                preview.src = "";
+            }
+        }
+
+        previewFile(); //calls the function named previewFile()
+
+    </script>
+
+    <div class='container container-floating accent'>
+        <p class='title'>Legg til ny tur</p>
+        <p>Fyll ut skjemaet under for å legge til ny tur. <br>Avslutt med å trykke på knappen "Legg til".<br>Bilde kan du sende til Eirik.</p>
+    </div>
+
+    <div class='container light'>
         <form id='newHike'>
             <label for="title">Tittel</label>
             <br>
@@ -55,6 +93,10 @@
         </form>
 
     </div>
+    <div class='spacer'></div>
+    <div class='container dark'>
+        &copy; 2019 Eirik Urdal
+    </div>
 
     <!-- Min javascript -->
     <script src='js/hikesClient.js' type='application/javascript'></script>
@@ -62,11 +104,12 @@
 
     <script>
         let newHike = document.getElementById("newHike");
-        newHike.onsubmit = function (e){
+        newHike.onsubmit = function(e) {
             e.preventDefault;
             console.log('legger til ny tur');
         };
         //btnSubmit.onclick = addNewHike;
+
     </script>
 
 </body>

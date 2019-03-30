@@ -2,7 +2,27 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const db = require('./dbconnect').db; //database
+const fileUpload = require('express-fileupload');
 // ---------------------------
+
+router.post('/upload', function (req, res) {
+    console.log(req.files.sampleFile);
+    if (Object.keys(req.files).length == 0) {
+        return res.status(400).send('No files were uploaded.');
+    }
+
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    let sampleFile = req.files.sampleFile;
+
+    // Use the mv() method to place the file somewhere on your server
+    sampleFile.mv(`../public/img/test.jpg`, function (err) {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        console.log('File opplastet!')
+        res.send('File uploaded!');
+    });
+});
 
 
 // ADD NEW HIKE---------------
@@ -16,7 +36,7 @@ router.post("/add/", async function (req, res) {
 
         let query = `INSERT INTO hikes(title, description, date, isnew) VALUES('${title}', '${description}', '${date}', '${isnew}') RETURNING *;`;
 
-        let datarows = await db.any(query); 
+        let datarows = await db.any(query);
         console.log(datarows);
 
         let statusCode = datarows ? 200 : 500;
@@ -32,37 +52,6 @@ router.post("/add/", async function (req, res) {
         console.log("ERROR: " + error);
     }
 });
-
-/*
-
-// UPDATE LIST---------------
-router.post("/update/list/", utilities.authenticateUser, async function (req, res) {
-    try {
-        let listElements = req.body;
-        let listId = req.get("listId");
-        let idCount = req.get("newIdCount");
-
-        let query = `UPDATE lists SET content='${JSON.stringify({listElements:listElements})}', idcount='${idCount}' WHERE id=${listId};`;
-
-        console.log(query);
-
-        let datarows = await db.any(query);
-
-        let statusCode = datarows ? 200 : 500;
-        console.log("Status: " + statusCode);
-        res.status(statusCode).json({
-            msg: `Listen er oppdatert.`
-        }).end()
-    } catch (error) {
-        res.status(500).json({
-            error: error
-        }); //something went wrong!
-        console.log("ERROR: " + error);
-    }
-});
-
-*/
-
 
 // GET ALL HIKES ---------------
 router.get("/getall/", async function (req, res) {
