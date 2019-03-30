@@ -1,15 +1,15 @@
  @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Roboto:400,400i,700,700i');
 
-:root {
-    --main-color: #ffeb3b;
-    --second-color: #fffcdd;
-    --accent-color: #ffeb3b;
-    --light-color: white;
-    --dark-color: #222;
-    --dark-translucent-color: rgba(34, 34, 34, 0.75);
-    --dark-color2: #444;
+ :root {
+     --main-color: #ffeb3b;
+     --second-color: #fffcdd;
+     --accent-color: #ffeb3b;
+     --light-color: white;
+     --dark-color: #222;
+     --dark-translucent-color: rgba(34, 34, 34, 0.75);
+     --dark-color2: #444;
 
-    /*  YELLOW theme
+     /*  YELLOW theme
     
     --main-color: #ffeb3b;
     --second-color: #fffcdd;
@@ -20,7 +20,7 @@
     
     */
 
-    /*  SOM BROSJYREN
+     /*  SOM BROSJYREN
     --main-color: rgb(0, 140, 211);
     --second-color: rgb(163, 209, 232);
     --accent-color: rgb(237, 105, 73);
@@ -29,231 +29,234 @@
     --dark-color2: #444;
     
     */
-}
+ }
 
-* {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    padding: 0;
-    margin: 0;
-}
+ * {
+     font-family: 'Roboto', sans-serif;
+     font-size: 1em;
+     
+     padding: 0;
+     margin: 0;
+     
+     list-style: none;
+ }
 
-/*****************************
+ /*****************************
 ******* COLORS and BG ********
 *****************************/
 
-.dark {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-}
+ .dark {
+     background-color: var(--dark-color);
+     color: var(--light-color);
+ }
 
-.dark-translucent {
-    background-color: var(--dark-translucent-color);
-    color: var(--light-color);
-}
+ .dark-translucent {
+     background-color: var(--dark-translucent-color);
+     color: var(--light-color);
+ }
 
-.light {
-    background-color: var(--light-color);
-    color: var(--dark-color2);
-}
+ .light {
+     background-color: var(--light-color);
+     color: var(--dark-color2);
+ }
 
-.accent {
-    background-color: var(--accent-color);
-    color: var(--dark-color2);
-}
+ .accent {
+     background-color: var(--accent-color);
+     color: var(--dark-color2);
+ }
 
-.color-accent {
-    color: var(--accent-color);
-}
+ .color-accent {
+     color: var(--accent-color);
+ }
 
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1500;
-    background-size: cover;
-    background-position: bottom;
-    background-color: var(--main-color);
-    background-image: url('/img/kraageland.jpg');
-}
+ .background-image {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     z-index: -1500;
+     background-size: cover;
+     background-position: bottom;
+     background-color: var(--main-color);
+     background-image: url('/img/kraageland.jpg');
+ }
 
-/*****************************
+ /*****************************
 ********** DIVERSE ***********
 *****************************/
 
-h1,
-h2,
-h3 {
-    font-family: 'Lora', serif;
-}
+ h1,
+ h2,
+ h3 {
+     font-family: 'Lora', serif;
+ }
 
-.title {
-    font-weight: 700;
-    font-style: italic;
-    font-size: 1.5em;
-    padding-bottom: 10px;
-}
+ .title {
+     font-weight: 700;
+     font-style: italic;
+     font-size: 1.5em;
+     padding-bottom: 10px;
+ }
 
-hr {
-    margin: auto;
-    border-width: 0.5px;
-    border-color: var(--dark-color2);
-}
+ hr {
+     margin: auto;
+     border-width: 0.5px;
+     border-color: var(--dark-color2);
+ }
 
-/*****************************
+ /*****************************
 ************ MENU ************
 *****************************/
 
-.cogIcon {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 2em;
-    color: var(--light-color);
-}
+ .cogIcon {
+     position: absolute;
+     right: 15px;
+     top: 15px;
+     font-size: 2em;
+     color: var(--light-color);
+ }
 
 /*****************************
 *********** BUTTONS **********
 *****************************/
 
-.button {
-    display: inline-block;
-    padding: 5px 15px;
-    margin-right: 10px;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 0.75em;
-    font-weight: 400;
-}
+ .button {
+     display: inline-block;
+     padding: 5px 15px;
+     margin-right: 10px;
+     background-color: var(--dark-color);
+     color: var(--light-color);
+     cursor: pointer;
+     border-radius: 5px;
+     font-size: 0.75em;
+     font-weight: 400;
+ }
 
-.button:hover {
-    background-color: var(--dark-color2);
-    color: var(--light-color);
-}
+ .button:hover {
+     background-color: var(--dark-color2);
+     color: var(--light-color);
+ }
 
-.button:active {
-    background-color: var(--light-color);
-    color: var(--dark-color);
-}
+ .button:active {
+     background-color: var(--light-color);
+     color: var(--dark-color);
+ }
 
-/*****************************
+ /*****************************
 ********** SECTIONS **********
 *****************************/
 
-#header {
-    margin: auto;
-    max-width: 800px;
-}
+ #header {
+     margin: auto;
+     max-width: 800px;
+ }
 
-.page-title {
-    text-align: center;
-    color: var(--light-color);
-    text-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
-    padding: 10% 0;
-    font-size: 10vw;    
-    
-    transition: padding 0.3s ease;
-}
+ .page-title {
+     text-align: center;
+     color: var(--light-color);
+     text-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
+     padding: 10% 0;
+     font-size: 10vw;
 
-.container {
-    padding: 15px;
-    text-align: center;
-    box-sizing: border-box;
-    margin: auto;
-    max-width: 700px;
-}
+     transition: padding 0.3s ease;
+ }
 
-.spacer {
-    height: 100px;
-}
+ .container {
+     padding: 15px;
+     text-align: center;
+     box-sizing: border-box;
+     margin: auto;
+     max-width: 700px;
+ }
 
-.container-floating {
-    margin: 25px 25px;
-    border-radius: 15px;
-    border-bottom: 4px solid white;
-    box-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
+ .spacer {
+     height: 100px;
+ }
 
-    transition: all 0.3s ease;
-}
+ .container-floating {
+     margin: 25px 25px;
+     border-radius: 15px;
+     border-bottom: 4px solid white;
+     box-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
 
-/*******************************
+     transition: all 0.3s ease;
+ }
+
+ /*******************************
 ******* HIKE CONTAINER *********
 *******************************/
-.hike-container {
-    padding: 15px 0;
-    min-height: 200px;
-    width: 100%;
-}
+ .hike-container {
+     padding: 15px 0;
+     min-height: 200px;
+     width: 100%;
+ }
 
-.hike-info {
-    box-sizing: border-box;
-    width: 70%;
-    padding: 25px;
-}
+ .hike-info {
+     box-sizing: border-box;
+     width: 70%;
+     padding: 25px;
+ }
 
-.hike-image {
-    width: 30%;
-    height: 200px;
-    background-size: cover;
-    float: right;
-    margin-left: 25px;
+ .hike-image {
+     width: 30%;
+     height: 200px;
+     background-size: cover;
+     float: right;
+     margin-left: 25px;
 
-    transition: width 0.3s;
+     transition: width 0.3s;
 
-    border-bottom: 4px solid var(--accent-color);
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-}
-
-
-
-.hike-title {
-    color: var(--dark-color);
-    font-size: 1.5em;
-    font-weight: 400;
-}
+     border-bottom: 4px solid var(--accent-color);
+     border-radius: 15px;
+     -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+ }
 
 
 
-
-/* UNDER 500 PX*/
-@media only screen and (max-width: 500px) {
-    .page-title {
-        padding: 20vh 0;
-    }
-
-    .container-floating {
-        margin: 0 0;
-        border-radius: 0;
-        border: none;
-        box-shadow: none;
-    }
-
-    .hike-info {
-        width: 100%;
-    }
-
-    .hike-image {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-}
-
-/* OVER 800 PX */
-@media only screen and (min-width: 700px) {
-    .page-title {
-        font-size: 4.4em;
-    }
+ .hike-title {
+     color: var(--dark-color);
+     font-size: 1.5em;
+     font-weight: 400;
+ }
 
 
-    .container-floating {
-        margin: 25px auto;
-        border-radius: 25px;
-        box-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
-    }
-}
+
+
+ /* UNDER 500 PX*/
+ @media only screen and (max-width: 500px) {
+     .page-title {
+         padding: 20vh 0;
+     }
+
+     .container-floating {
+         margin: 0 0;
+         border-radius: 0;
+         border: none;
+         box-shadow: none;
+     }
+
+     .hike-info {
+         width: 100%;
+     }
+
+     .hike-image {
+         width: 100%;
+         margin-bottom: 15px;
+     }
+ }
+
+ /* OVER 800 PX */
+ @media only screen and (min-width: 700px) {
+     .page-title {
+         font-size: 4.4em;
+     }
+
+
+     .container-floating {
+         margin: 25px auto;
+         border-radius: 25px;
+         box-shadow: 0px 5px 10px rgba(34, 34, 34, 0.35);
+     }
+ }

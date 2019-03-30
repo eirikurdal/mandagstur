@@ -37,8 +37,8 @@
         </div>
     </div>
     <div class='container light'>
-        <div id='btnAll' class='button'>Alle turer</div>
-        <div id='btnUpcoming' class='button'>Kommende turer</div>
+        <div id='btnAll' class='button' onclick="showHikes('all')">Alle turer</div>
+        <div id='btnUpcoming' class='button' onclick="showHikes('upcoming')">Kommende turer</div>
         <div style='display: inline-block'>
             <i class="fas fa-star color-accent" ${styleText}></i>
             = Ny tur i år
@@ -56,17 +56,9 @@
     <script src='js/hikesClient.js' type='application/javascript'></script>
     <script src='js/script.js' type='application/javascript'></script>
     <script>
-        let btnUpcoming = document.getElementById("btnUpcoming");
-        btnUpcoming.onclick = showUpcomingHikes;
-
-        let btnAll = document.getElementById("btnAll");
-        btnAll.onclick = showAllHikes;
-
-
         (function() {
-            showAllHikes();
+            showHikes('all');
         })()
-
     </script>
 
 </body>

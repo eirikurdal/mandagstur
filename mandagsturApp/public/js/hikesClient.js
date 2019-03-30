@@ -15,21 +15,37 @@ const OUTPUT_HIKES_CONTAINER = "hikesContainer";
 // ===========================================
 
 
-function showAllHikes() {
+function showHikes(filter) {
     getAllHikes().then(response => {
         if (response.status !== 200) {
             let hikes = response.hikes;
             let hikesContainer = document.getElementById(OUTPUT_HIKES_CONTAINER);
             hikesContainer.innerHTML = "";
 
-            for (let i = 0; i < hikes.length; i++) {
-                let hikeId = hikes[i].id;
-                let title = hikes[i].title;
-                let description = hikes[i].description;
-                let date = hikes[i].date;
-                let image = hikes[i].image;
+            // Filtrere ut gamle turer
+            let today = new Date().toJSON().substr(0, 10);
+
+            let filteredHikes = [];
+
+            if (filter == 'upcoming') {
+                for (let i = 0; i < hikes.length; i++) {
+                    if (hikes[i].date >= today) {
+                        filteredHikes.push(hikes[i]);
+                        console.log('added hike to filtered list: ' + hikes[i].title);
+                    }
+                }
+            } else {
+                filteredHikes = hikes;
+            }
+
+            for (let j = 0; j < filteredHikes.length; j++) {
+                let hikeId = filteredHikes[j].id;
+                let title = filteredHikes[j].title;
+                let description = filteredHikes[j].description;
+                let date = filteredHikes[j].date;
+                let image = filteredHikes[j].image;
                 let styleText = '';
-                if (!hikes[i].isnew) {
+                if (!filteredHikes[j].isnew) {
                     styleText = `style='display:none'`;
                 }
                 let html = "";
@@ -60,54 +76,6 @@ function showAllHikes() {
     });
 }
 
-function showUpcomingHikes() {
-    getAllHikes().then(response => {
-        if (response.status !== 200) {
-            let hikes = response.hikes;
-            let hikesContainer = document.getElementById(OUTPUT_HIKES_CONTAINER);
-            hikesContainer.innerHTML = "";
-
-            for (let i = 0; i < hikes.length; i++) {
-                let hikeId = hikes[i].id;
-                let title = hikes[i].title;
-                let description = hikes[i].description;
-                let date = hikes[i].date.substring(0, 10);
-                let image = hikes[i].image;
-                let styleText = '';
-                if (!hikes[i].isnew) {
-                    styleText = `style='display:none'`;
-                }
-                let html = "";
-
-                // Filtrere ut gamle turer
-                let today = new Date().toJSON().substr(0, 10);
-
-                if (date >= today) {
-                    html += `
-                        <hr>
-                        <div id="${hikeId}" class='hikeContainer'>
-                            <div class="hikeImage"
-                                style="background-image: url('/img/${image}')">
-                            </div>
-                            <div class='hikeInfo'>
-                                <p class='date'>${convertDate(date)}</p>
-                                <h2 class='title'>
-                                    
-                                    <i class="fas fa-star newHike" ${styleText}></i>
-                                    ${title}
-                                </h2>
-                                <p class='description'>${description}</p>
-                            </div>
-                        </div>
-                        `;
-
-                    hikesContainer.innerHTML += html;
-                }
-
-            }
-        }
-    });
-}
 
 function addNewHike(evt) {
     evt.preventDefault();
